@@ -17,3 +17,8 @@ class TextField(WebElement):
         super()._wait_element(self.selector)
         element = self.driver.find_element(By.XPATH, self.selector)
         element.send_keys(value)
+
+    def get_attribute(self):
+        super()._wait_element(self.selector)
+        element = self.driver.find_element(By.XPATH, self.selector)
+        return element.get_attribute("value")

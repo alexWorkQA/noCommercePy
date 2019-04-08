@@ -7,7 +7,8 @@ class LoginPage(BasePage):
 
     def click_login_btn(self):
         """
-        @type: Click login btn <params>
+        click login button
+        :return:
         """
         self.lgn_btn.click()
         return LoginPage(self.driver)
@@ -23,16 +24,22 @@ class LoginPage(BasePage):
         return LoginPage(self.driver)
 
     def open(self):
-        self.driver.get(self.get_url())
+        """
+        Method open page vua url
+        :return: bla
+        """
+
+        self.driver.get(self._get_url())
         return LoginPage(self.driver)
 
     """Locators, __init__ and other methods"""
+
     _url = "/login"
     _login_btn = ".//input[@class='button-1 login-button']"
     _email_fld = ".//input[@id='Email']"
     _pass_fld = ".//input[@id='Password']"
 
-    def get_url(self):
+    def _get_url(self):
         return super()._url + self._url
 
     def __init__(self, driver):
